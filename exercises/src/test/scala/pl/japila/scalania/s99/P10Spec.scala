@@ -10,5 +10,17 @@ object P10Spec extends Specification {
       val expected = List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e))
       actual mustEqual expected
     }
+
+    "Run-length encoding of a one-element list." in {
+      val actual = encode(List('a))
+      val expected = List((1, 'a))
+      actual mustEqual expected
+    }
+
+    "Run-length encoding of a Nil list." in {
+      val actual = encode(Nil)
+      val expected = Nil
+      actual mustEqual expected
+    }
   }
 }

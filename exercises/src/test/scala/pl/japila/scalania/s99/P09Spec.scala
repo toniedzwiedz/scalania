@@ -13,6 +13,9 @@ object P09Spec extends Specification {
     "Applied to an empty list return an empty list" in {
       pack(Nil) mustEqual Nil
     }
+    "Applied to a list with a single element return the same list" in {
+      pack(Seq('a)) mustEqual Seq(Seq('a))
+    }
     "Pack duplicates in a all-same-element list" in {
       pack(Seq(1, 1, 1)) mustEqual Seq(Seq(1, 1, 1))
     }
