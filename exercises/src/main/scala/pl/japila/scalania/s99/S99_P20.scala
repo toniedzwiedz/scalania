@@ -7,6 +7,9 @@ object S99_P20 {
     ("my own implementation", removeAt)
   )
 
-  def removeAt[T](n: Int, ts: Seq[T]): (Seq[Any], Any) = ???
+  def removeAt[T](n: Int, ts: Seq[T]): (Seq[Any], Any) = {
+    val removed = ts(n)
+    (ts.diff(Seq(removed)), removed)
+  }
 
 }

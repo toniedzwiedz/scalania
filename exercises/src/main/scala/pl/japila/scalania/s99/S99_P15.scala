@@ -1,5 +1,7 @@
 package pl.japila.scalania.s99
 
 object S99_P15 {
-  def duplicateN[T](n: Int, ts: Seq[T]): Seq[T] = ???
+  def duplicateN[T](n: Int, ts: Seq[T]): Seq[T] = {
+    ts flatMap { elem => List.fill(n)(elem) }
+  }
 }

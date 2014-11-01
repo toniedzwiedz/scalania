@@ -8,5 +8,12 @@ object S99_P13 {
    * scala> encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
    * res0: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
    */
-  def encodeDirect[T](ts: Seq[T]): Seq[(Int, T)] = ???
+  def encodeDirect[T](ts: Seq[T]): Seq[(Int, T)] = {
+    if (ts.isEmpty) {
+      Nil
+    } else {
+      val (head, tail) = ts span { _ == ts.head }
+      (head.length, head.head) +: encodeDirect(tail)
+    }
+  }
 }
