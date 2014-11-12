@@ -11,7 +11,7 @@ class P25Spec extends Specification with ExamplesBlock {
           solution >> {
             val input = List('a, 'b, 'c, 'd, 'e, 'f)
             val randomPer = randomPermuteImpl(input)
-            randomPer.intersect(input) === input
+            randomPer.intersect(input) === randomPer
             randomPer.diff(input).size === 0
           }
       }

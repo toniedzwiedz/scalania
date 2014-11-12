@@ -1,5 +1,7 @@
 package pl.japila.scalania.s99
 
+import scala.util.Random
+
 object S99_P24 {
   type LottoFn = (Int, Int) => Seq[Int]
 
@@ -7,5 +9,7 @@ object S99_P24 {
     ("my own implementation", lotto)
   )
 
-  def lotto(count: Int, max: Int): Seq[Int] = ???
+  def lotto(count: Int, max: Int): Seq[Int] = {
+    Random.shuffle((1 to max).toList).take(count)
+  }
 }
