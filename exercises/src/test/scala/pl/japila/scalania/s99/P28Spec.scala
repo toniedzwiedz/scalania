@@ -15,7 +15,17 @@ class P28Spec extends Specification with ExamplesBlock {
           }
       }
     }
+  "Sort a list of lists according to length of sublists. Edge case - empty list" in {
+      import S99_P28._
+      solutions[Symbol].foreach {
+        case (solution, lsortImpl) =>
+          solution >> {
+            lsortImpl(List(List('a, 'b, 'c), List(), List('m, 'n), List('o))) === List(List(), List('o), List('m, 'n), List('a, 'b, 'c))
+          }
+      }
+    }
   }
+
   "P28b solution" should {
     "Sort lists according to their length frequency" in {
       import S99_P28._
