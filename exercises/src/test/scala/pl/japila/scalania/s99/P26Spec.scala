@@ -1,11 +1,11 @@
 package pl.japila.scalania.s99
 
 import org.specs2.mutable._
+import S99_P26.solutions
 
 class P26Spec extends Specification with ExamplesBlock {
   "P26 solution" should {
     "Generate the combinations of 3 distinct objects, chosen from a 4 element list." in {
-      import S99_P26.solutions
       solutions[Symbol]().foreach {
         case (solution, combinationsImpl) =>
           solution >> {
@@ -16,7 +16,6 @@ class P26Spec extends Specification with ExamplesBlock {
       }
     }
     "Return an empty sequence if the count of 0 is specified." in {
-      import S99_P26.solutions
       solutions[Symbol]().foreach {
         case (solution, combinationsImpl) =>
           solution >> {
@@ -27,18 +26,16 @@ class P26Spec extends Specification with ExamplesBlock {
       }
     }
     "Return an empty sequence if the original sequence is empty." in {
-      import S99_P26.solutions
       solutions[Symbol]().foreach {
         case (solution, combinationsImpl) =>
           solution >> {
             val input = List()
             val expected = List()
-            combinationsImpl(0, input) === expected
+            combinationsImpl(3, input) === expected
           }
       }
     }
     "Generate all the combinations of a committee of 3, chosen from a group of 12 people." in {
-      import S99_P26.solutions
       solutions[Int]().foreach {
         case (solution, combinationsImpl) =>
           solution >> {
