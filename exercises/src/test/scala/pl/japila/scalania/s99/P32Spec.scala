@@ -7,7 +7,7 @@ class P32Spec extends Specification {
   "P32 solution" should {
     "Determine the greatest common divisor of two positive integer numbers." in {
       gcd(36, 63) === 9
+      gcd(36, 0) === 36
     }
   }
-
 }
