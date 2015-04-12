@@ -7,5 +7,12 @@ object S99_P26 {
     ("my own implementation", combinations[T])
   )
 
-  def combinations[T](count: Int, ts: Seq[T]): Seq[Seq[T]] = ???
+
+  def combinations[T](count: Int, ts: Seq[T]): Seq[Seq[T]] = {
+    (count, ts) match {
+      case (0, _) => Nil
+      case (1, _) => ts.map(item => Seq(item))
+      case (count, ts) => ts.combinations(count).toSeq
+    }
+  }
 }

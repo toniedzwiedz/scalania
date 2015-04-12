@@ -15,6 +15,28 @@ class P26Spec extends Specification with ExamplesBlock {
           }
       }
     }
+    "Return an empty sequence if the count of 0 is specified." in {
+      import S99_P26.solutions
+      solutions[Symbol]().foreach {
+        case (solution, combinationsImpl) =>
+          solution >> {
+            val input = List('a, 'b, 'c, 'd)
+            val expected = List()
+            combinationsImpl(0, input) === expected
+          }
+      }
+    }
+    "Return an empty sequence if the original sequence is empty." in {
+      import S99_P26.solutions
+      solutions[Symbol]().foreach {
+        case (solution, combinationsImpl) =>
+          solution >> {
+            val input = List()
+            val expected = List()
+            combinationsImpl(0, input) === expected
+          }
+      }
+    }
     "Generate all the combinations of a committee of 3, chosen from a group of 12 people." in {
       import S99_P26.solutions
       solutions[Int]().foreach {
